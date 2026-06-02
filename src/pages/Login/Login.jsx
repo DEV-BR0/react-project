@@ -15,7 +15,7 @@ function Login() {
       gsap.from("#Login", {
         y: 100,
         opacity: 0,
-        duration:1.5
+        duration: 1.5,
       });
     });
   }
@@ -23,7 +23,7 @@ function Login() {
   return (
     <>
       <div
-        className="flex w-[100%] h-[100%] justify-center items-center mt-[200px]"
+        className="flex w-[100%] h-[100%] justify-center items-center mt-[200px] bg-white"
         id="Login"
       >
         <div className="w-[100%] h-[100%] rounded-2xl xl:w-[300px flex flex-col justify-center items-center">
@@ -38,7 +38,7 @@ function Login() {
               <p className="text-gray-500">Hisobingizga kiring</p>
             </div>
 
-            <div className="flex gap-[20px] flex-col w-[100%]">
+            <form className="flex gap-[20px] flex-col w-[100%]">
               <div className="flex flex-col gap-[10px]">
                 <Input text={"Ism"} Label={"Foydalanuvchi nomi"} />
               </div>
@@ -50,7 +50,7 @@ function Login() {
                 />
               </div>
               <div className="w-[100%]">
-                <NavLink className="block text-center text-white bg-black rounded-[10px] w-[100%] p-[15px]">
+                <NavLink className="block text-center text-white bg-black rounded-[10px] w-[100%] p-[15px]" to={"/dashboard"}>
                   Kirish
                 </NavLink>
               </div>
@@ -62,7 +62,7 @@ function Login() {
                   </NavLink>
                 </p>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

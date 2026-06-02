@@ -1,0 +1,64 @@
+import { Outlet } from "react-router-dom";
+
+import {
+  Wallet,
+  LayoutDashboard,
+  ArrowLeftRight,
+  FolderKanban,
+} from "lucide-react";
+import Button from "../../components/buttons/Button";
+
+function Navbar() {
+  return (
+    <>
+      <nav className="lg:w-[300px] hidden lg:block md:block sm:  h-[100%]  flex flex-col gap-[-100px] fixed border-1 border-gray-300 ">
+        <div
+          className="flex gap-[20px] items-center border-1 border-gray-200 w-[100% ] justify-center p-[20px] pr-[0px] "
+          id="Navbar__main"
+        >
+          <div className="w-[50px] h-[50px] flex  bg-linear-[-25deg,_#4ade80,_#60a5fa] justify-center rounded-[50%] justify-center items-center p-[20px] ">
+            <div className="flex " id="Navbar__main--header">
+              <Wallet color="white" />
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <h2 className="text-[20px] font-bold hidden lg:block xl:block">Xarajatlar</h2>
+            <p className="hidden lg:block xl:block">Boshqaruv tizimi</p>
+          </div>
+        </div>
+        <div className="p-[30px] flex flex-col gap-[30px]">
+          <div className="" id="Navbar__btn--main">
+            <Button
+              Kes={"/dashboard"}
+              icon={<LayoutDashboard />}
+              text={"Dashboard"}
+            />
+          </div>
+          <div className="" id="Navbar__btn--main">
+            <Button
+              Kes={"/otkazma"}
+              icon={<ArrowLeftRight />}
+              text={"Tranzaksiyalar"}
+            />
+          </div>
+          <div className="" id="Navbar__btn--main">
+            <Button
+              Kes={"/kategoria"}
+              icon={<FolderKanban />}
+              text={"Kategoria"}
+            />
+          </div>
+          <div className="" id="Navbar__btn--main">
+            <Button Kes={""} icon={<LayoutDashboard />} text={"Dashboard"} />
+          </div>
+        </div>
+      </nav>
+
+      <main className="md:ml-[130px] md:p-[10px] lg:ml-[300px] w-full p-[0] ml-[0px] p-[10px] ">
+        <Outlet />
+      </main>
+    </>
+  );
+}
+
+export default Navbar;

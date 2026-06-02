@@ -1,0 +1,20 @@
+
+function Dashboard() {
+  return (
+    <>
+      <div className="w-[100%] p-[20px]">
+        <div className="header__title">
+          <div className="flex flex-col">
+            <h2 className="font-bold text-[25px]">Dashboard</h2>
+            <p className="font-medium text-gray-400 font-sans">
+              Xarajatlaringizni boshqaring
+            </p>
+          </div>
+          <div className="data"></div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Dashboard;
