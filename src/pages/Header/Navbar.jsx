@@ -5,6 +5,8 @@ import {
   LayoutDashboard,
   ArrowLeftRight,
   FolderKanban,
+  ChartColumn,
+  User,
 } from "lucide-react";
 import Button from "../../components/buttons/Button";
 
@@ -22,7 +24,9 @@ function Navbar() {
             </div>
           </div>
           <div className="flex flex-col">
-            <h2 className="text-[20px] font-bold hidden lg:block xl:block">Xarajatlar</h2>
+            <h2 className="text-[20px] font-bold hidden lg:block xl:block">
+              Xarajatlar
+            </h2>
             <p className="hidden lg:block xl:block">Boshqaruv tizimi</p>
           </div>
         </div>
@@ -49,7 +53,14 @@ function Navbar() {
             />
           </div>
           <div className="" id="Navbar__btn--main">
-            <Button Kes={""} icon={<LayoutDashboard />} text={"Dashboard"} />
+            <Button
+              Kes={"/statistika"}
+              icon={<ChartColumn />}
+              text={"Statistika"}
+            />
+          </div>
+          <div className="" id="Navbar__btn--main">
+            <Button Kes={"/info"} icon={<User />} text={"Profil"} />
           </div>
         </div>
       </nav>
