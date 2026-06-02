@@ -23,7 +23,7 @@ function Login() {
   return (
     <>
       <div
-        className="flex w-[100%] h-[100%] justify-center items-center mt-[200px] bg-white"
+        className="flex w-[100%] h-[100%] justify-center items-center mt-[130px] bg-white"
         id="Login"
       >
         <div className="w-[100%] h-[100%] rounded-2xl xl:w-[300px flex flex-col justify-center items-center">

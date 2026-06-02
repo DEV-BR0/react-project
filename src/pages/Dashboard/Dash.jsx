@@ -1,8 +1,7 @@
-
 function Dashboard() {
   return (
     <>
-      <div className="w-[100%] p-[20px]">
+      <div className="w-[85%] p-[20px]">
         <div className="header__title">
           <div className="flex flex-col">
             <h2 className="font-bold text-[25px]">Dashboard</h2>
