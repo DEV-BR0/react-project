@@ -6,7 +6,7 @@ import Otkazma from "./pages/Tranzaksiyalar/Tranzaksiyalar";
 import Katalog from "./pages/Katalog/Katalog";
 import Profile from "./pages/Profil/Profil";
 import Statistika from "./pages/statistika/Statistika";
-import NotFound from "./Notefine/Notes";
+import Notes from "./Notefine/Notes";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
           <Route path="/kategoria" element={<Katalog />} />
           <Route path="/info" element={<Profile />} />
           <Route path="/statistika" element={<Statistika />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Notes />} />
         </Route>
       </Routes>
     </>
