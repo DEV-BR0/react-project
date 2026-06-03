@@ -1,7 +1,9 @@
 function Otkazma() {
   return (
     <>
-      <h1>hello</h1>
+      <div className="mt-[90px] md:mt-0">
+        <h1>Otkazma</h1>
+      </div>
     </>
   );
 }

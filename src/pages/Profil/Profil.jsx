@@ -1,9 +1,11 @@
 function Profile() {
   return (
     <>
-      <h1>Profile</h1>
+      <div className="mt-[90px] md:mt-0">
+        <h1>Profile</h1>
+      </div>
     </>
   );
 }
 
-export default Profile
+export default Profile;

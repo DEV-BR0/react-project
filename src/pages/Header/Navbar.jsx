@@ -7,20 +7,25 @@ import {
   FolderKanban,
   ChartColumn,
   User,
+  Menu,
 } from "lucide-react";
 import Button from "../../components/buttons/Button";
+import Bars from "../Bars/Bars";
+import { useState } from "react";
 
 function Navbar() {
+  const [opense, setOpense] = useState(false);
+
   return (
     <>
-      <nav className="lg:w-[300px] hidden lg:block md:block sm:  h-[100%]  flex flex-col gap-[-100px] fixed border-1 border-gray-300 ">
+      <nav className="lg:w-[300px] hidden lg:block md:block sm:  h-[100%]  flex flex-clo gap-[-100px] fixed border-1 border-gray-300 ">
         <div
           className="flex gap-[20px] items-center border-1 border-gray-200 w-[100% ] justify-center p-[20px] pr-[0px] "
           id="Navbar__main"
         >
           <div className="w-[50px] h-[50px] flex  bg-linear-[-25deg,_#4ade80,_#60a5fa] justify-center rounded-[50%] justify-center items-center p-[20px] ">
             <div className="flex " id="Navbar__main--header">
-              <Wallet color="white" />
+              <Wallet color="white"  />
             </div>
           </div>
           <div className="flex flex-col">
@@ -64,8 +69,22 @@ function Navbar() {
           </div>
         </div>
       </nav>
+      <div className="flex justify-center">
+        <div className="container mx-auto shadow-[10px_35px_35px_rgba(0,0,0,0.25)] w-[100%] rounded-2xl fixed bg-white">
+          <div className="logo"></div>
+          <div className="flex justify-between mt-1 lg:hidden md:hidden mr-4 items-center p-[10px] ">
+            <div className="w-[50px] h-[50px] flex  bg-linear-[-25deg,_#4ade80,_#60a5fa] justify-center rounded-[50%] justify-center items-center p-[20px]  ">
+              <div className="flex " id="Navbar__main--header">
+                <Wallet color="white" />
+              </div>
+            </div>
+            <Menu onClick={() => setOpense(!opense) } />
+          </div>
+        </div>
+      </div>
 
-      <main className="md:ml-[130px] md:p-[10px] lg:ml-[300px] w-[84%] p-[0] ml-[0px] p-[10px] ">
+      {opense && <Bars Kes={opense} setOpense={setOpense} />}
+      <main className="md:ml-[130px] md:p-[10px] lg:ml-[300px] w-[80%] p-[0] ml-[0px] p-[10px] ">
         <Outlet />
       </main>
     </>

@@ -2,7 +2,7 @@
 function Dashboard() {
   return (
     <>
-      <div className="w-[100%] p-[20px]">
+      <div className="w-[100%] p-[20px] gap-[20px] mt-[70px] md:mt-0">
         <div className="header__title">
           <div className="flex flex-col">
             <h2 className="font-bold text-[25px]">Dashboard</h2>
@@ -12,6 +12,39 @@ function Dashboard() {
           </div>
           <div className="data"></div>
         </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </>
   );
