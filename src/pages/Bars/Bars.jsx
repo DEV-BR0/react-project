@@ -1,16 +1,16 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import {
+  ArrowLeftRight,
+  ChartColumn,
+  FolderKanban,
+  LayoutDashboard,
+  User,
   Wallet,
   X,
-  LayoutDashboard,
-  ArrowLeftRight,
-  FolderKanban,
-  ChartColumn,
-  User,
 } from "lucide-react";
-import { useGSAP } from "@gsap/react";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import gsap from "gsap";
 
 function Bars({ setOpense }) {
   gsap.registerPlugin(useGSAP);
@@ -43,7 +43,10 @@ function Bars({ setOpense }) {
 
   return (
     <>
-      <div className="fixed inset-0 bg-[rgba(255,255,255,0.03)] backdrop-blur-sm z-50 transition duration-200 flex justify-end">
+      <div
+        onClick={handleClose}
+        className="fixed inset-0 bg-[rgba(255,255,255,0.03)] backdrop-blur-sm z-50 transition duration-200 flex justify-end"
+      >
         <div className="w-[70%] shadow-xl/30  rounded-1-[20px]" ref={menuRef}>
           <div className="w-[100%] h-[100px] flex  bg-linear-[-25deg,_#4ade80,_#60a5fa] justify-center  justify-center items-center p-[20px] ">
             <div
