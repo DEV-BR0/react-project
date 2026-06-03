@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function Notes() {
   return (
     <>
-      <div className="mx-auto w-[100%] h-[70vh] flex justify-center items-center text-center flex-col absolute  left-0">
+      <div className="mx-auto w-[100%] h-auto flex justify-center items-center text-center flex-col absolute  left-0 z-[-100]">
         <div className="404">
           <h1 className="text-[80px] font-bold">404</h1>
           <p>Ushbu Sahida Topilmadi</p>
