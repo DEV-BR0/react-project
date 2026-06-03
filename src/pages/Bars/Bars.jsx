@@ -44,7 +44,7 @@ function Bars({ setOpense }) {
   return (
     <>
       <div className="fixed inset-0 bg-[rgba(255,255,255,0.03)] backdrop-blur-sm z-50 transition duration-200 flex justify-end">
-        <div className="w-[45%] shadow-xl/30  rounded-1-[20px]" ref={menuRef}>
+        <div className="w-[70%] shadow-xl/30  rounded-1-[20px]" ref={menuRef}>
           <div className="w-[100%] h-[100px] flex  bg-linear-[-25deg,_#4ade80,_#60a5fa] justify-center  justify-center items-center p-[20px] ">
             <div
               className="flex items-center gap-[20px] text-white"
