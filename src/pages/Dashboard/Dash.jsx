@@ -1,8 +1,7 @@
-
 function Dashboard() {
   return (
     <>
-      <div className="w-[100%] p-[20px] gap-[20px] mt-[70px] md:mt-0">
+      <div className="w-[100%] p-[20px] gap-[20px] ">
         <div className="header__title">
           <div className="flex flex-col">
             <h2 className="font-bold text-[25px]">Dashboard</h2>

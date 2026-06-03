@@ -84,7 +84,7 @@ function Navbar() {
       </div>
 
       {opense && <Bars Kes={opense} setOpense={setOpense} />}
-      <main className="md:ml-[130px] md:p-[10px] lg:ml-[300px] w-[80%] p-[0] ml-[0px] p-[10px] ">
+      <main className="md:ml-[130px] md:p-[10px] lg:ml-[300px] w-[80%] p-[0] ml-[0px] p-[10px] md:mt-0 mt-[80px]">
         <Outlet />
       </main>
     </>
