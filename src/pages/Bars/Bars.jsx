@@ -1,7 +1,16 @@
-import { Wallet, X } from "lucide-react";
+import {
+  Wallet,
+  X,
+  LayoutDashboard,
+  ArrowLeftRight,
+  FolderKanban,
+  ChartColumn,
+  User,
+} from "lucide-react";
 import { useGSAP } from "@gsap/react";
+import { useRef, useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import gsap from "gsap";
-import { useRef, useEffect } from "react";
 
 function Bars({ setOpense }) {
   gsap.registerPlugin(useGSAP);
@@ -23,13 +32,19 @@ function Bars({ setOpense }) {
       },
     });
   };
+
+  useGSAP(() => {
+    gsap.from("#NavLink", {
+      x: 100,
+      duration: 0.4,
+      stagger: 0.07,
+    });
+  });
+
   return (
     <>
       <div className="fixed inset-0 bg-[rgba(255,255,255,0.03)] backdrop-blur-sm z-50 transition duration-200 flex justify-end">
-        <div
-          className="w-[45%] shadow-xl/30  rounded-1-[20px]"
-          ref={menuRef}
-        >
+        <div className="w-[45%] shadow-xl/30  rounded-1-[20px]" ref={menuRef}>
           <div className="w-[100%] h-[100px] flex  bg-linear-[-25deg,_#4ade80,_#60a5fa] justify-center  justify-center items-center p-[20px] ">
             <div
               className="flex items-center gap-[20px] text-white"
@@ -42,8 +57,53 @@ function Bars({ setOpense }) {
               </div>
             </div>
           </div>
-          <div onClick={handleClose} className='p-[10px] rounded-4xl bg-red-300 w-[45px] mt-[10px] absolute left-[10px]'>
+          <div
+            onClick={handleClose}
+            className="p-[10px] rounded-4xl bg-red-300 w-[45px] mt-[10px] absolute left-[10px]"
+          >
             <X onClick={handleClose} />
+          </div>
+          <div className="flex flex-col absolute top-[170px] left-[30px] w-[100%] gap-[20px]">
+            <NavLink
+              id="NavLink"
+              onClick={handleClose}
+              to={"/dashboard"}
+              className="text-[20px] font-bold bg-green-400 w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px] "
+            >
+              <LayoutDashboard /> Dashboard
+            </NavLink>
+            <NavLink
+              id="NavLink"
+              onClick={handleClose}
+              to={"/otkazma"}
+              className="text-[20px] font-bold bg-green-400 w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px] "
+            >
+              <ArrowLeftRight /> Tranzaksiyalar
+            </NavLink>
+            <NavLink
+              id="NavLink"
+              onClick={handleClose}
+              to={"/kategoria"}
+              className="text-[20px] font-bold bg-green-400 w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px] "
+            >
+              <FolderKanban /> Kategoria
+            </NavLink>
+            <NavLink
+              id="NavLink"
+              onClick={handleClose}
+              to={"/statistika"}
+              className="text-[20px] font-bold bg-green-400 w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px]  "
+            >
+              <ChartColumn /> Statistika
+            </NavLink>
+            <NavLink
+              id="NavLink"
+              onClick={handleClose}
+              to={"/info"}
+              className="text-[20px] font-bold bg-green-400 w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px] l"
+            >
+              <User /> Profile
+            </NavLink>
           </div>
         </div>
       </div>
