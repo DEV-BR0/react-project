@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { Wallet } from "lucide-react";
+import { NavLink } from "react-router-dom";
 import Input from "../../components/input/Input";
-import { useGSAP } from '@gsap/react';
-import gsap from "gsap"
 function Royhat() {
   {
     useGSAP(() => {
@@ -16,7 +16,10 @@ function Royhat() {
 
   return (
     <>
-      <div className="flex w-[100%] h-[100%] justify-center items-center mt-[200px]" id='Royhat'>
+      <div
+        className="flex w-[100%] h-[100%] justify-center items-center mt-[130px] mb-[150px]"
+        id="Royhat"
+      >
         <div className="w-[300px] h-[700px] bg-blue-100 rounded-2xl  flex flex-col justify-center items-center 2xl:w-[25%]">
           <div className="flex justify-center p-[30px] flex-col items-center w-[100%] gap-[30px]">
             <div className="flex  bg-linear-[-25deg,_#4ade80,_#60a5fa]  rounded-[50%] justify-center items-center p-[20px] ">
