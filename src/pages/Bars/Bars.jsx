@@ -70,7 +70,7 @@ function Bars({ setOpense }) {
               to={"/dashboard"}
               className="text-[20px] font-bold bg-green-400 w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px] "
             >
-              <LayoutDashboard /> Dashboard
+              <LayoutDashboard size={20} /> Dashboard
             </NavLink>
             <NavLink
               id="NavLink"
@@ -78,7 +78,7 @@ function Bars({ setOpense }) {
               to={"/otkazma"}
               className="text-[20px] font-bold bg-green-400 w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px] "
             >
-              <ArrowLeftRight /> Tranzaksiyalar
+              <ArrowLeftRight width={40} height={40} /> Tranzaksiyalar
             </NavLink>
             <NavLink
               id="NavLink"
@@ -86,7 +86,7 @@ function Bars({ setOpense }) {
               to={"/kategoria"}
               className="text-[20px] font-bold bg-green-400 w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px] "
             >
-              <FolderKanban /> Kategoria
+              <FolderKanban size={20} /> Kategoria
             </NavLink>
             <NavLink
               id="NavLink"
@@ -94,7 +94,7 @@ function Bars({ setOpense }) {
               to={"/statistika"}
               className="text-[20px] font-bold bg-green-400 w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px]  "
             >
-              <ChartColumn /> Statistika
+              <ChartColumn size={20} /> Statistika
             </NavLink>
             <NavLink
               id="NavLink"
@@ -102,7 +102,7 @@ function Bars({ setOpense }) {
               to={"/info"}
               className="text-[20px] font-bold bg-green-400 w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px] l"
             >
-              <User /> Profile
+              <User size={20} /> Profile
             </NavLink>
           </div>
         </div>
