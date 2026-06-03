@@ -21,15 +21,15 @@ function Notes() {
         <div className="flex gap-[30px]">
           <NavLink
             className="p-[20px] border-1 rounded-3xl  hover:bg-blue-400 hover:text-white transition duration-200"
-            to={"/dashboard"}
-          >
-            Bosh Sahifa
-          </NavLink>
-          <NavLink
-            className="p-[20px] border-1 rounded-3xl  hover:bg-blue-400 hover:text-white transition duration-200"
             to={"/"}
           >
             Sing Up
+          </NavLink>
+          <NavLink
+            className="p-[20px] border-1 rounded-3xl  hover:bg-blue-400 hover:text-white transition duration-200"
+            to={"/royhat"}
+          >
+            Login
           </NavLink>
         </div>
       </div>
