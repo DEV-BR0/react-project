@@ -7,7 +7,7 @@ function Royhat() {
   {
     useGSAP(() => {
       gsap.from("#Royhat", {
-        y: 100,
+        y: -100,
         opacity: 0,
         duration: 1.5,
       });
@@ -17,10 +17,10 @@ function Royhat() {
   return (
     <>
       <div
-        className="flex w-[100%] h-[100%] justify-center items-center mt-[130px] mb-[150px]"
+        className="flex w-[100%] h-[100%] justify-center items-center mt-[30px] "
         id="Royhat"
       >
-        <div className="w-[300px] h-[700px] bg-blue-100 rounded-2xl  flex flex-col justify-center items-center 2xl:w-[25%]">
+        <div className="w-[100%] h-[700px] bg-blue-100 rounded-2xl  flex flex-col justify-center items-center 2xl:w-[25%]">
           <div className="flex justify-center p-[30px] flex-col items-center w-[100%] gap-[30px]">
             <div className="flex  bg-linear-[-25deg,_#4ade80,_#60a5fa]  rounded-[50%] justify-center items-center p-[20px] ">
               <Wallet color="white" size={30} />
