@@ -24,8 +24,8 @@ function App() {
           <Route path="/kategoria" element={<Katalog />} />
           <Route path="/info" element={<Profile />} />
           <Route path="/statistika" element={<Statistika />} />
-          <Route path="*" element={<Notes />} />
         </Route>
+          <Route path="*" element={<Notes />} />
       </Routes>
     </>
   );
