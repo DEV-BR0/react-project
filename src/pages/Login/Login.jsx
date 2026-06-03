@@ -1,9 +1,9 @@
-import { NavLink } from "react-router-dom";
-import { Wallet } from "lucide-react";
-import { useState } from "react";
-import Input from "../../components/input/Input";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { Wallet } from "lucide-react";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import Input from "../../components/input/Input";
 
 function Login() {
   const [show, setSHow] = useState(false);
@@ -50,7 +50,10 @@ function Login() {
                 />
               </div>
               <div className="w-[100%]">
-                <NavLink className="block text-center text-white bg-black rounded-[10px] w-[100%] p-[15px]" to={"/dashboard"}>
+                <NavLink
+                  className="block text-center text-white bg-black rounded-[10px] w-[100%] p-[15px]"
+                  to={"/dashboard"}
+                >
                   Kirish
                 </NavLink>
               </div>
