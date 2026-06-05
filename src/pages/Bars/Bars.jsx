@@ -26,7 +26,6 @@ function Bars({ setOpense }) {
     gsap.fromTo(menuRef.current, { x: "100%" }, { x: "0%", duration: 0.6 });
   }, []);
 
-
   const handleClose = () => {
     gsap.to(menuRef.current, {
       x: "100%",
@@ -72,11 +71,7 @@ function Bars({ setOpense }) {
           >
             <X onClick={handleClose} />
           </div>
-<<<<<<< HEAD
-          <div className="flex flex-col absolute top-[170px] p-[10px] w-[100%] gap-[20px]">
-=======
           <div className="flex flex-col absolute top-[170px] p-[20px] w-[100%] gap-[20px]">
->>>>>>> a2f3b074dbb83e1438342b72cf50ccf1a52c30e8
             <NavLink
               id="NavLink"
               onClick={() => {
