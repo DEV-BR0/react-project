@@ -1,10 +1,46 @@
 import { useGSAP } from "@gsap/react";
+import axios from "axios";
 import gsap from "gsap";
 import { Wallet } from "lucide-react";
+import { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { toast } from "sonner";
 import Input from "../../components/input/Input";
 function Royhat() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const idRef = useRef(1);
+
+  const createUser = () => {
+    const id = idRef.current;
+    idRef.current += 1;
+
+    console.log(id);
+  };
+
+  async function Pose(e) {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post(`http://localhost:3000/users`, {
+        id: idRef.current,
+        name,
+        email,
+        password,
+        confirmPassword,
+      });
+
+      toast.success("Ro'yhatan otingiz");
+
+      console.log(res.data);
+    } catch (error) {
+      toast.error("server hatosi");
+    }
+  }
+
   {
     useGSAP(() => {
       gsap.from("#Royhat", {
@@ -34,39 +70,52 @@ function Royhat() {
             </div>
 
             <div className="flex gap-[20px] flex-col w-[100%]">
-              <div className="">
-                <Input text={"Ismigiz"} Label={"Ism"} />
-              </div>
-              <div className="">
-                <Input text={"Email"} type={"email"} Label={"Email"} />
-              </div>
-              <div className="">
-                <Input
-                  text={"***** "}
-                  type={"password"}
-                  Label={"Parol kiriting"}
-                />
-              </div>
-              <div className="">
-                <Input
-                  text={"*****  "}
-                  type={"password"}
-                  Label={"Parolni tasdiqlang"}
-                />
-              </div>
-              <div className="w-[100%]">
-                <NavLink
-                  to={"/dashboard"}
-                  onClick={() =>
-                    toast.success("Ro'yhatdan O'tkanigiz bilan Tabriklayman", {
-                      duration: 3000,
-                    })
-                  }
-                  className="block text-center text-white bg-black rounded-[10px] w-[100%] p-[15px]"
-                >
-                  Kirish
-                </NavLink>
-              </div>
+              <form onSubmit={Pose}>
+                <div className="">
+                  <Input
+                    text={"Ismigiz"}
+                    Label={"Ism"}
+                    onchage={(e) => {
+                      setName(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="">
+                  <Input
+                    text={"Email"}
+                    type={"email"}
+                    Label={"Email"}
+                    onchage={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="">
+                  <Input
+                    text={"***** "}
+                    type={"password"}
+                    Label={"Parol kiriting"}
+                    onchage={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="">
+                  <Input
+                    text={"*****  "}
+                    type={"password"}
+                    Label={"Parolni tasdiqlang"}
+                    onchage={(e) => {
+                      setConfirmPassword(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="w-[100%]">
+                  <button className="block text-center text-white bg-black rounded-[10px] w-[100%] p-[15px]">
+                    Kirish
+                  </button>
+                </div>
+              </form>
 
               <div className="w-[100%] flex justify-center">
                 <p className="text-gray-600">

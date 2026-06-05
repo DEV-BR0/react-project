@@ -1,22 +1,26 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Toaster } from "sonner";
-import Login from "./pages/Login/Login";
-import Royxat from "./pages/Royxat/Royhat";
-import Navbar from "./pages/Header/Navbar";
-import Dashboard from "./pages/Dashboard/Dash";
-import Otkazma from "./pages/Tranzaksiyalar/Tranzaksiyalar";
-import Katalog from "./pages/Katalog/Katalog";
-import Profile from "./pages/Profil/Profil";
-import Statistika from "./pages/statistika/Statistika";
 import Notes from "./Notefine/Notes";
+import useAxios from "./hooks/useAxios";
+import Dashboard from "./pages/Dashboard/Dash";
+import Navbar from "./pages/Header/Navbar";
+import Katalog from "./pages/Katalog/Katalog";
+import Login from "./pages/Login/Login";
+import Profile from "./pages/Profil/Profil";
+import Royxat from "./pages/Royxat/Royhat";
+import Otkazma from "./pages/Tranzaksiyalar/Tranzaksiyalar";
+import Statistika from "./pages/statistika/Statistika";
+const API = "http://localhost:3000/users";
 function App() {
+  const resoult = useAxios(API);
+
   return (
     <>
-    <Toaster position="top-center"/>
+      <Toaster position="top-center" />
       <Routes>
         <Route>
-          <Route path="/" element={<Login />} />
-          <Route path="/royhat" element={<Royxat />} />
+          <Route path="/" element={<Login />} back={resoult} />
+          <Route path="/royhat" element={<Royxat />} back={resoult} />
         </Route>
 
         <Route element={<Navbar />}>
@@ -26,7 +30,7 @@ function App() {
           <Route path="/info" element={<Profile />} />
           <Route path="/statistika" element={<Statistika />} />
         </Route>
-          <Route path="*" element={<Notes />} />
+        <Route path="*" element={<Notes />} />
       </Routes>
     </>
   );

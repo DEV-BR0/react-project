@@ -1,14 +1,39 @@
 import { useGSAP } from "@gsap/react";
+import axios from "axios";
 import gsap from "gsap";
 import { Wallet } from "lucide-react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import Input from "../../components/input/Input";
 
-function Login() {
+function Login({ back }) {
   const [show, setSHow] = useState(false);
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+  async function Pose(e) {
+    e.preventDefault();
+
+    try {
+      const res = await axios.get("http://localhost:3000/users");
+
+      const user = res.data.find(
+        (u) => u.name === name && u.password === password,
+      );
+
+      if (user) {
+        toast.success("Tizimga Hush Kelibsiz");
+
+        navigate("/dashboard");
+      } else {
+        toast.error("Ism Yoki Parol Hato");
+      }
+    } catch (error) {
+      toast.error("server hatosi iltmos keynroq urnib koring");
+    }
+  }
   gsap.registerPlugin(useGSAP);
 
   {
@@ -39,29 +64,34 @@ function Login() {
               <p className="text-gray-500">Hisobingizga kiring</p>
             </div>
 
-            <form className="flex gap-[20px] flex-col w-[100%]">
+            <form onSubmit={Pose} className="flex gap-[20px] flex-col w-[100%]">
               <div className="flex flex-col gap-[10px]">
-                <Input text={"Ism"} Label={"Foydalanuvchi nomi"} />
+                <Input
+                  text={"Ism"}
+                  Label={"Foydalanuvchi nomi"}
+                  back={back}
+                  onchage={(e) => {
+                    setName(e.target.value);
+                  }}
+                />
               </div>
               <div className="flex flex-col gap-[10px]">
                 <Input
                   text={"Parol"}
                   type={show ? "text" : "password"}
                   Label={"Foydalanuvchi Paroli"}
+                  onchage={(e) => {
+                    setPassword(e.target.value);
+                  }}
                 />
               </div>
               <div className="w-[100%]">
-                <NavLink
-                  onClick={() =>
-                    toast.success("Tizimga Hush Kelibsiz", {
-                      duration: 3000,
-                    })
-                  }
+                <button
                   className="block text-center text-white bg-black rounded-[10px] w-[100%] p-[15px]"
                   to={"/dashboard"}
                 >
                   Kirish
-                </NavLink>
+                </button>
               </div>
               <div className="w-[100%] flex justify-center">
                 <p className="text-gray-600">
