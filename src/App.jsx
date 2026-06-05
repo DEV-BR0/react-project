@@ -12,12 +12,12 @@ import Notes from "./Notefine/Notes";
 function App() {
   return (
     <>
-    <Toaster position="top-center"/>
       <Routes>
         <Route>
           <Route path="/" element={<Login />} />
           <Route path="/royhat" element={<Royxat />} />
         </Route>
+    <Toaster position="top-center"/>
 
         <Route element={<Navbar />}>
           <Route path="/dashboard" element={<Dashboard />} />
