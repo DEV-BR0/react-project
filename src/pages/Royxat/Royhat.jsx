@@ -58,8 +58,8 @@ function Royhat() {
                 <NavLink
                   to={"/dashboard"}
                   onClick={() =>
-                    toast.success("Ro'yhatdan O'tkanigiz bilan Tabriklay man", {
-                      duration: 1000,
+                    toast.success("Ro'yhatdan O'tkanigiz bilan Tabriklayman", {
+                      duration: 3000,
                     })
                   }
                   className="block text-center text-white bg-black rounded-[10px] w-[100%] p-[15px]"

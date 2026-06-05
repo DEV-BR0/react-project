@@ -54,7 +54,7 @@ function Login() {
                 <NavLink
                   onClick={() =>
                     toast.success("Tizimga Hush Kelibsiz", {
-                      duration: 1000,
+                      duration: 3000,
                     })
                   }
                   className="block text-center text-white bg-black rounded-[10px] w-[100%] p-[15px]"
