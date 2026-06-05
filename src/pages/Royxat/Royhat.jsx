@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Wallet } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { toast } from "sonner";
 import Input from "../../components/input/Input";
 function Royhat() {
   {
@@ -54,10 +55,19 @@ function Royhat() {
                 />
               </div>
               <div className="w-[100%]">
-                <NavLink className="block text-center text-white bg-black rounded-[10px] w-[100%] p-[15px]">
+                <NavLink
+                  to={"/dashboard"}
+                  onClick={() =>
+                    toast.success("Ro'yhatdan O'tkanigiz bilan Tabriklay man", {
+                      duration: 1000,
+                    })
+                  }
+                  className="block text-center text-white bg-black rounded-[10px] w-[100%] p-[15px]"
+                >
                   Kirish
                 </NavLink>
               </div>
+
               <div className="w-[100%] flex justify-center">
                 <p className="text-gray-600">
                   Hisobingiz bormi ?{" "}

@@ -1,3 +1,5 @@
+import { Routes, Route } from "react-router-dom";
+import { Toaster } from "sonner";
 import Login from "./pages/Login/Login";
 import Royxat from "./pages/Royxat/Royhat";
 import Navbar from "./pages/Header/Navbar";
@@ -7,11 +9,10 @@ import Katalog from "./pages/Katalog/Katalog";
 import Profile from "./pages/Profil/Profil";
 import Statistika from "./pages/statistika/Statistika";
 import Notes from "./Notefine/Notes";
-import { Routes, Route } from "react-router-dom";
-
 function App() {
   return (
     <>
+    <Toaster position="top-center"/>
       <Routes>
         <Route>
           <Route path="/" element={<Login />} />

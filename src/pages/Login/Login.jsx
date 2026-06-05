@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { Wallet } from "lucide-react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { toast } from "sonner";
 import Input from "../../components/input/Input";
 
 function Login() {
@@ -51,6 +52,11 @@ function Login() {
               </div>
               <div className="w-[100%]">
                 <NavLink
+                  onClick={() =>
+                    toast.success("Tizimga Hush Kelibsiz", {
+                      duration: 1000,
+                    })
+                  }
                   className="block text-center text-white bg-black rounded-[10px] w-[100%] p-[15px]"
                   to={"/dashboard"}
                 >

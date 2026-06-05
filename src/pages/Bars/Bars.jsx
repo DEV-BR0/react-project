@@ -1,5 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+
+// icons
 import {
   ArrowLeftRight,
   ChartColumn,
@@ -9,17 +11,21 @@ import {
   Wallet,
   X,
 } from "lucide-react";
-import { useEffect, useRef } from "react";
+
+// react
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Bars({ setOpense }) {
-  gsap.registerPlugin(useGSAP);
-
   const menuRef = useRef();
+  const [ie, setIe] = useState(false);
+
+  gsap.registerPlugin(useGSAP);
 
   useEffect(() => {
     gsap.fromTo(menuRef.current, { x: "100%" }, { x: "0%", duration: 0.2 });
   }, []);
+
 
   const handleClose = () => {
     gsap.to(menuRef.current, {
@@ -66,12 +72,16 @@ function Bars({ setOpense }) {
           >
             <X onClick={handleClose} />
           </div>
-          <div className="flex flex-col absolute top-[170px] left-[30px] w-[100%] gap-[20px]">
+          <div className="flex flex-col absolute top-[170px] p-[10px] w-[100%] gap-[20px]">
             <NavLink
               id="NavLink"
-              onClick={handleClose}
+              onClick={() => {
+                handleClose;
+
+                setIe(true);
+              }}
               to={"/dashboard"}
-              className="text-[20px] font-bold bg-green-400 w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px] "
+              className={`text-[20px] font-bold w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px] ${ie ? "bg-blue-400" : "bg-green-400"}`}
             >
               <LayoutDashboard size={20} /> Dashboard
             </NavLink>
