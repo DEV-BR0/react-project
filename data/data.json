@@ -1,19 +1,4 @@
 {
-  "users": [
-    {
-      "id": "4Zieir7GQUw",
-      "name": "ubaydulloh",
-      "email": "lazizbek@gmail.com",
-      "password": "pono0908",
-      "confirmPassword": "pono0908"
-    },
-    {
-      "id": "d00nOJ-Fac8",
-      "name": "ubaydulloh",
-      "email": "laziz@gmail.com",
-      "password": "pono0908",
-      "confirmPassword": "pono0908"
-    }
-  ],
+  "users": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

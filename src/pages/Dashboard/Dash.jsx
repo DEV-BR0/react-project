@@ -1,3 +1,5 @@
+import Cards from "../cards/cards";
+
 function Dashboard() {
   return (
     <>
@@ -9,7 +11,9 @@ function Dashboard() {
               Xarajatlaringizni boshqaring
             </p>
           </div>
-          <div className="data"></div>
+          <div className="data">
+            <Cards/>
+          </div>
         </div>
       </div>
     </>
