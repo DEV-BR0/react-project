@@ -2,7 +2,8 @@
 function Cotegoriy() {
   return (
     <div> 
-      <div className="flex ">cl</div>    
+      <div className="flex  justify-center">
+        </div>    
     </div>
   )
 }
