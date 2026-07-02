@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "users": [
     {
       "name": "ubaydulloh",
@@ -18,5 +19,8 @@
       "id": "6q4bc88XNAo"
     }
   ],
+=======
+  "users": [],
+>>>>>>> 0ab66d6be6ad147ec34dc0da1397d5e95e129c28
   "$schema": "./node_modules/json-server/schema.json"
 }
