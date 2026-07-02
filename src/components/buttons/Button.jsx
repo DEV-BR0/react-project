@@ -4,10 +4,14 @@ function Button({ text, icon, Kes }) {
     <>
       <NavLink
         to={Kes}
-        className="flex gap-[20px] p-[20px] focus:bg-black focus:text-white transition duration-200 font-medium rounded-2xl hover:bg-gray-200 hover:to-black "
+        className={({ isActive }) =>
+          `flex gap-[20px] p-[20px] transition duration-200 font-medium rounded-2xl ${
+            isActive ? "bg-black text-white" : "text-black"
+          }`
+        }
       >
         {icon}
-        <h4 className='hidden lg:block xl:block'>{text}</h4>{" "}
+        <h4 className="hidden lg:block xl:block">{text}</h4>{" "}
       </NavLink>
     </>
   );

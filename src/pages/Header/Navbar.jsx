@@ -1,17 +1,17 @@
 import { Outlet } from "react-router-dom";
 
 import {
-  Wallet,
-  LayoutDashboard,
-  ArrowLeftRight,
-  FolderKanban,
+  ArrowRightLeft,
   ChartColumn,
-  User,
+  FolderKanban,
+  LayoutDashboard,
   Menu,
+  User,
+  Wallet,
 } from "lucide-react";
+import { useState } from "react";
 import Button from "../../components/buttons/Button";
 import Bars from "../Bars/Bars";
-import { useState } from "react";
 
 function Navbar() {
   const [opense, setOpense] = useState(false);
@@ -25,7 +25,7 @@ function Navbar() {
         >
           <div className="w-[50px] h-[50px] flex  bg-linear-[-25deg,_#4ade80,_#60a5fa] justify-center rounded-[50%] justify-center items-center p-[20px] ">
             <div className="flex " id="Navbar__main--header">
-              <Wallet color="white"  />
+              <Wallet color="white" />
             </div>
           </div>
           <div className="flex flex-col">
@@ -46,7 +46,7 @@ function Navbar() {
           <div className="" id="Navbar__btn--main">
             <Button
               Kes={"/otkazma"}
-              icon={<ArrowLeftRight />}
+              icon={<ArrowRightLeft />}
               text={"Tranzaksiyalar"}
             />
           </div>
@@ -78,13 +78,13 @@ function Navbar() {
                 <Wallet color="white" />
               </div>
             </div>
-            <Menu onClick={() => setOpense(!opense) } />
+            <Menu onClick={() => setOpense(!opense)} />
           </div>
         </div>
       </div>
 
       {opense && <Bars Kes={opense} setOpense={setOpense} />}
-      <main className="md:ml-[130px] md:p-[10px] lg:ml-[300px] w-[80%] p-[0] ml-[0px] p-[10px] md:mt-0 mt-[80px]">
+      <main className="md:ml-[130px] md:p-[10px] lg:ml-[300px] flex flex-col lg:items-center w-[100%] lg:w-[80%] md:w-[80%] p-[0] ml-[0px] p-[10px] md:mt-0 mt-[80px]">
         <Outlet />
       </main>
     </>

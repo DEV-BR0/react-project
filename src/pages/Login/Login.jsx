@@ -1,11 +1,11 @@
 import { useGSAP } from "@gsap/react";
-import axios from "axios";
 import gsap from "gsap";
 import { Wallet } from "lucide-react";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import Input from "../../components/input/Input";
+import apiClient from "../../hooks/useAxios";
 
 function Login({ back }) {
   const [show, setSHow] = useState(false);
@@ -17,7 +17,7 @@ function Login({ back }) {
     e.preventDefault();
 
     try {
-      const res = await axios.get("http://localhost:3000/users");
+      const res = await apiClient.get("/users");
 
       const user = res.data.find(
         (u) => u.name === name && u.password === password,

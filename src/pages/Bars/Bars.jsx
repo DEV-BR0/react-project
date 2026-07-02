@@ -90,7 +90,7 @@ function Bars({ setOpense }) {
               to={"/otkazma"}
               className="text-[20px] font-bold bg-green-400 w-[100%] p-[20px] rounded-2xl flex items-center gap-[10px] "
             >
-              <ArrowLeftRight width={40} height={40} /> Tranzaksiyalar
+              <ArrowLeftRight size={20} /> Tranzaksiyalar
             </NavLink>
             <NavLink
               id="NavLink"

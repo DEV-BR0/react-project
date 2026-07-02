@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { toast } from "sonner";
 import Input from "../../components/input/Input";
+import apiClient from "../../hooks/useAxios";
 function Royhat() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -25,8 +26,7 @@ function Royhat() {
     e.preventDefault();
 
     try {
-      const res = await axios.post(`http://localhost:3000/users`, {
-        id: idRef.current,
+      const res = await apiClient.post("/users", {
         name,
         email,
         password,
@@ -76,7 +76,7 @@ function Royhat() {
                     text={"Ismigiz"}
                     Label={"Ism"}
                     onchage={(e) => {
-                      setName(e.target.value);
+                      setName(e.target.value.toLowerCase());
                     }}
                   />
                 </div>

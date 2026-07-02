@@ -1,18 +1,21 @@
 {
   "users": [
     {
-      "id": "4Zieir7GQUw",
       "name": "ubaydulloh",
-      "email": "lazizbek@gmail.com",
+      "email": "a@gmail.com",
       "password": "pono0908",
-      "confirmPassword": "pono0908"
-    },
+      "confirmPassword": "pono0908",
+      "id": "0HFGwBim_xA"
+    }
+  ],
+  "harajat": [
     {
-      "id": "d00nOJ-Fac8",
-      "name": "ubaydulloh",
-      "email": "laziz@gmail.com",
-      "password": "pono0908",
-      "confirmPassword": "pono0908"
+      "title": "salom",
+      "category": "ovqat",
+      "type": "income",
+      "amount": "1",
+      "date": "2026-07-17",
+      "id": "6q4bc88XNAo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
