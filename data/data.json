@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "users": [
     {
       "name": "ubaydulloh",
@@ -11,7 +10,7 @@
   ],
   "harajat": [
     {
-      "title": "salom",
+      "title": "sa",
       "category": "ovqat",
       "type": "income",
       "amount": "1",
@@ -19,8 +18,6 @@
       "id": "6q4bc88XNAo"
     }
   ],
-=======
-  "users": [],
->>>>>>> 0ab66d6be6ad147ec34dc0da1397d5e95e129c28
+  "category": [],
   "$schema": "./node_modules/json-server/schema.json"
 }
