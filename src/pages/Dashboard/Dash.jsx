@@ -1,12 +1,8 @@
-<<<<<<< HEAD
 import { ArrowDownRight, ArrowUpRight, Calendar, Eye } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import apiClient from "../../hooks/useAxios";
-=======
-import Cards from "../cards/cards";
 
->>>>>>> 0ab66d6be6ad147ec34dc0da1397d5e95e129c28
 function Dashboard() {
   const [data, setData] = useState([]);
 
