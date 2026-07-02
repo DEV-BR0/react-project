@@ -64,7 +64,6 @@ function Dashboard() {
             </p>
           </div>
           <div className="data">
-<<<<<<< HEAD
             <h1 className="flex gap-[5px]">
               <Calendar /> may 2026
             </h1>
