@@ -2,7 +2,7 @@
 function Cotegoriy() {
   return (
     <div> 
-      <div className=""></div>    
+      <div className="flex "></div>    
     </div>
   )
 }
