@@ -41,13 +41,6 @@
       "date": "2026-07-22"
     }
   ],
-  "category": [
-    {
-      "id": "Y2a2Hb0vABw",
-      "category": [],
-      "icon": "Utensils",
-      "color": "bin"
-    }
-  ],
+  "category": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

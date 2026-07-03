@@ -31,7 +31,7 @@ const icons = {
   Utensils: <Utensils />,
 };
 
-function Card() {
+function Card({ setModalOpen }) {
   const [kategoria, setCotegoriy] = useState([]);
   async function getCarde() {
     try {
@@ -146,193 +146,181 @@ function Card() {
         );
       })}
 
-      <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center  bg-black/50">
-        <div className="flex flex-col gap-[10px] w-[460px] bg-white p-[10px]">
-          <div className="flex w-full justify-between items-center border-b-1 border-gray-400 pb-[10px]">
+      <div className="fixed top-0 left-0 w-screen h-screen flex justify-center items-center bg-black/50 backdrop-blur-sm z-50">
+        <div className="flex flex-col gap-[16px] w-[460px] max-h-[90vh] overflow-y-auto bg-white p-[20px] rounded-2xl shadow-xl">
+          <div className="flex w-full justify-between items-center border-b border-gray-200 pb-[14px]">
             <p className="text-[20px] font-bold">Yangi Kategoriya</p>
-            <X />
+            <button
+              onClick={() => setModalOpen(false)}
+              className="p-[6px] bg-gray-100 hover:bg-gray-200 transition-colors rounded-full"
+            >
+              <X size={18} />
+            </button>
           </div>
+
           <div className="flex flex-col">
-            <form className="flex gap-[20px] flex-col" onSubmit={posted}>
-              <label className="text-[17px] font-bold">Kategoriya nomi</label>
-              <input
-                type="text"
-                placeholder="Masalan: Ovqat"
-                className="border p-[13px] rounded-2xl outline-none "
-              />
+            <form className="flex gap-[18px] flex-col" onSubmit={posted}>
+              <div className="flex flex-col gap-[8px]">
+                <label className="text-[15px] font-semibold text-gray-700">
+                  Kategoriya nomi
+                </label>
+                <input
+                  type="text"
+                  placeholder="Masalan: Ovqat"
+                  className="border border-gray-300 p-[12px] rounded-xl outline-none focus:border-black focus:ring-1 focus:ring-black transition-colors text-[15px]"
+                />
+              </div>
+
               <div className="flex flex-col gap-[10px]">
-                <div className="">
-                  <p className="text-[17px] font-bold">icon Tanlang</p>
-                </div>
-                <div
-                  className="flex flex-wrap gap-[5px] justify-center
-                "
-                >
+                <p className="text-[15px] font-semibold text-gray-700">
+                  Icon tanlang
+                </p>
+                <div className="grid grid-cols-6 gap-[8px]">
                   <button
                     type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px]"
+                    className="p-[10px] bg-gray-100 hover:bg-gray-200 transition-colors rounded-xl flex items-center justify-center"
                     onClick={() => setIcon("Utensils")}
                   >
                     {icons.Utensils}
                   </button>
                   <button
                     type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px]"
+                    className="p-[10px] bg-gray-100 hover:bg-gray-200 transition-colors rounded-xl flex items-center justify-center"
                     onClick={() => setIcon("Book")}
                   >
                     {icons.Book}
                   </button>
                   <button
                     type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px]"
+                    className="p-[10px] bg-gray-100 hover:bg-gray-200 transition-colors rounded-xl flex items-center justify-center"
                     onClick={() => setIcon("Car")}
                   >
                     {icons.Car}
                   </button>
                   <button
                     type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px]"
+                    className="p-[10px] bg-gray-100 hover:bg-gray-200 transition-colors rounded-xl flex items-center justify-center"
                     onClick={() => setIcon("Briefcase")}
                   >
                     {icons.Briefcase}
                   </button>
                   <button
                     type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px]"
+                    className="p-[10px] bg-gray-100 hover:bg-gray-200 transition-colors rounded-xl flex items-center justify-center"
                     onClick={() => setIcon("Coffee")}
                   >
                     {icons.Coffee}
                   </button>
                   <button
                     type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px]"
+                    className="p-[10px] bg-gray-100 hover:bg-gray-200 transition-colors rounded-xl flex items-center justify-center"
                     onClick={() => setIcon("Heart")}
                   >
                     {icons.Heart}
                   </button>
                   <button
                     type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px]"
+                    className="p-[10px] bg-gray-100 hover:bg-gray-200 transition-colors rounded-xl flex items-center justify-center"
                     onClick={() => setIcon("Shirt")}
                   >
                     {icons.Shirt}
                   </button>
                   <button
                     type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px]"
+                    className="p-[10px] bg-gray-100 hover:bg-gray-200 transition-colors rounded-xl flex items-center justify-center"
                     onClick={() => setIcon("House")}
                   >
                     {icons.House}
                   </button>
                   <button
                     type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px]"
+                    className="p-[10px] bg-gray-100 hover:bg-gray-200 transition-colors rounded-xl flex items-center justify-center"
                     onClick={() => setIcon("Smartphone")}
                   >
                     {icons.Smartphone}
                   </button>
                   <button
                     type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px]"
+                    className="p-[10px] bg-gray-100 hover:bg-gray-200 transition-colors rounded-xl flex items-center justify-center"
                     onClick={() => setIcon("Gamepad2")}
                   >
                     {icons.Gamepad2}
                   </button>
                 </div>
               </div>
+
               <div className="flex flex-col gap-[10px]">
-                <div className="">
-                  <p className="text-[17px] font-bold">Rang Tanlang</p>
-                </div>
-                <div
-                  className="flex flex-wrap gap-[5px] justify-center
-                "
-                >
+                <p className="text-[15px] font-semibold text-gray-700">
+                  Rang tanlang
+                </p>
+                <div className="flex flex-wrap gap-[10px]">
                   <button
                     type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px] text-white"
+                    className="w-[36px] h-[36px] rounded-full ring-offset-2 hover:ring-2 hover:ring-black transition-all"
                     style={{ background: colors.bin }}
                     onClick={() => setColor("bin")}
-                  >
-                    {colors.bin}
-                  </button>
+                  />
                   <button
                     type="button"
+                    className="w-[36px] h-[36px] rounded-full ring-offset-2 hover:ring-2 hover:ring-black transition-all"
                     style={{ background: colors.bint }}
-                    className="p-[10px] bg-[#0000001A] rounded-[10px] text-white"
                     onClick={() => setColor("bint")}
-                  >
-                    {colors.bint}
-                  </button>
+                  />
                   <button
                     type="button"
+                    className="w-[36px] h-[36px] rounded-full ring-offset-2 hover:ring-2 hover:ring-black transition-all"
                     style={{ background: colors.blue }}
-                    className="p-[10px] bg-[#0000001A] rounded-[10px] text-white"
                     onClick={() => setColor("blue")}
-                  >
-                    {colors.blue}
-                  </button>
+                  />
                   <button
+                    type="button"
+                    className="w-[36px] h-[36px] rounded-full ring-offset-2 hover:ring-2 hover:ring-black transition-all"
                     style={{ background: colors.gray }}
-                    type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px] text-white"
                     onClick={() => setColor("gray")}
-                  >
-                    {colors.gray}
-                  </button>
+                  />
                   <button
+                    type="button"
+                    className="w-[36px] h-[36px] rounded-full ring-offset-2 hover:ring-2 hover:ring-black transition-all"
                     style={{ background: colors.green }}
-                    type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px] text-white"
                     onClick={() => setColor("green")}
-                  >
-                    {colors.green}
-                  </button>
+                  />
                   <button
+                    type="button"
+                    className="w-[36px] h-[36px] rounded-full ring-offset-2 hover:ring-2 hover:ring-black transition-all"
                     style={{ background: colors.pink }}
-                    type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px] text-white"
                     onClick={() => setColor("pink")}
-                  >
-                    {colors.pink}
-                  </button>
+                  />
                   <button
+                    type="button"
+                    className="w-[36px] h-[36px] rounded-full ring-offset-2 hover:ring-2 hover:ring-black transition-all"
                     style={{ background: colors.red }}
-                    type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px] text-white"
                     onClick={() => setColor("red")}
-                  >
-                    {colors.red}
-                  </button>
+                  />
                   <button
+                    type="button"
+                    className="w-[36px] h-[36px] rounded-full ring-offset-2 hover:ring-2 hover:ring-black transition-all"
                     style={{ background: colors.sag }}
-                    type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px] text-white"
                     onClick={() => setColor("sag")}
-                  >
-                    {colors.sag}
-                  </button>
+                  />
                   <button
                     type="button"
+                    className="w-[36px] h-[36px] rounded-full ring-offset-2 hover:ring-2 hover:ring-black transition-all"
                     style={{ background: colors.watr }}
-                    className="p-[10px] bg-[#0000001A] rounded-[10px] text-white"
                     onClick={() => setColor("watr")}
-                  >
-                    {colors.watr}
-                  </button>
+                  />
                   <button
-                    style={{ background: colors.yellow }}
                     type="button"
-                    className="p-[10px] bg-[#0000001A] rounded-[10px]  text-white"
+                    className="w-[36px] h-[36px] rounded-full ring-offset-2 hover:ring-2 hover:ring-black transition-all"
+                    style={{ background: colors.yellow }}
                     onClick={() => setColor("yellow")}
-                  >
-                    {colors.yellow}
-                  </button>
+                  />
                 </div>
               </div>
 
-              <div className="flex">
-                <button>Create</button>
+              <div className="flex pt-[6px]">
+                <button className="w-full py-[12px] bg-black text-white rounded-xl font-semibold hover:bg-gray-800 transition-colors">
+                  Create
+                </button>
               </div>
             </form>
           </div>
