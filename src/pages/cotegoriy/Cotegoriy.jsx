@@ -1,6 +1,7 @@
 import { Plus } from "lucide-react";
 import { useState } from "react";
 import Card from "./Card";
+import ModalAdd from "./ModalAdd";
 
 function Cotegoriy() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -22,7 +23,8 @@ function Cotegoriy() {
           </button>
         </div>
       </div>
-      {modalOpen ? <Card setModalOpen={setModalOpen} /> : ""}
+      <Card />
+      {modalOpen ? <ModalAdd setModalOpen={setModalOpen} /> : ""}
     </div>
   );
 }

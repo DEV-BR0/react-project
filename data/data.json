@@ -17,30 +17,27 @@
   ],
   "harajat": [
     {
-      "id": "aVwVYdXDmyY",
       "title": "12",
-      "category": "Transport",
-      "type": "income",
+      "category": "Transpoert",
+      "type": "expense",
       "amount": "12",
-      "date": "2026-07-16"
-    },
-    {
-      "id": "Y9M78SSCbyw",
-      "title": "12122",
-      "category": "",
-      "type": "income",
-      "amount": "22222222",
-      "date": "2026-07-29"
-    },
-    {
-      "id": "d3kOnC6haq0",
-      "title": "12",
-      "category": "",
-      "type": "income",
-      "amount": "23",
-      "date": "2026-07-22"
+      "date": "2026-07-30",
+      "id": "o1CEdj7sP7g"
     }
   ],
-  "category": [],
+  "category": [
+    {
+      "id": "LYMGFeitr9M",
+      "category": "1212",
+      "icon": "House",
+      "color": "blue"
+    },
+    {
+      "id": "0wOhYDLUKa4",
+      "category": "Transpoert",
+      "icon": "Book",
+      "color": "gray"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
