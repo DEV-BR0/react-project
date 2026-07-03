@@ -59,10 +59,11 @@ function Otkazma() {
 
   const [title, setTitle] = useState("");
   const [summa, setSumma] = useState("");
-  const [kateori, setKategori] = useState("");
+  const [kateori, setKategori] = useState([]);
   const [date, setDate] = useState("");
   const [type, setType] = useState("");
 
+  const [cotegoriy, setCotegoriy] = useState("");
   const [modal, setModal] = useState("");
 
   async function del(id) {
@@ -78,7 +79,7 @@ function Otkazma() {
     const tr = {
       id: Date.now(),
       title: title,
-      category: kateori,
+      category: cotegoriy,
       type: type,
       amount: summa,
       date: date,
@@ -108,7 +109,7 @@ function Otkazma() {
 
     const tr = {
       title: title,
-      category: kateori,
+      category: cotegoriy,
       type: type,
       amount: summa,
       date: date,
@@ -123,13 +124,27 @@ function Otkazma() {
 
   useEffect(() => {
     if (edit) {
-      setKategori(edit.category);
+      setCotegoriy(edit.category);
       setTitle(edit.title);
       setType(edit.type);
       setDate(edit.date);
       setSumma(edit.amount);
     }
   }, [edit]);
+
+  async function getCategoriy() {
+    try {
+      const { data } = await apiClient.get("/category");
+      console.log(data);
+      setKategori(data);
+    } catch (error) {}
+  }
+
+  console.log(kateori);
+
+  useEffect(() => {
+    getCategoriy();
+  }, []);
 
   return (
     <div className="w-full flex flex-col p-[20px] gap-[30px]">
@@ -328,14 +343,19 @@ function Otkazma() {
               <div className="flex flex-col gap-2">
                 <label className="font-medium">Kategoriya</label>
 
-                <input
-                  required
-                  type="text"
-                  placeholder="Masalan: Ovqat"
-                  value={kateori}
-                  onChange={(e) => setKategori(e.target.value)}
+                <select
+                  min="0"
+                  onChange={(e) => {
+                    setCotegoriy(e.target.value);
+                  }}
+                  value={cotegoriy}
                   className="rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 outline-none transition focus:border-black focus:ring-2 focus:ring-black/10"
-                />
+                >
+                  <option>Tanlang</option>
+                  {kateori.map((item) => {
+                    return <option key={item.id}>{item.category}</option>;
+                  })}
+                </select>
               </div>
 
               <div className="flex flex-col gap-2">
@@ -489,14 +509,19 @@ function Otkazma() {
               <div className="flex flex-col gap-2">
                 <label className="font-medium">Kategoriya</label>
 
-                <input
-                  required
-                  type="text"
-                  placeholder="Masalan: Ovqat"
-                  value={kateori}
-                  onChange={(e) => setKategori(e.target.value)}
+                <select
+                  min="0"
+                  onChange={(e) => {
+                    setCotegoriy(e.target.value);
+                  }}
+                  value={cotegoriy}
                   className="rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 outline-none transition focus:border-black focus:ring-2 focus:ring-black/10"
-                />
+                >
+                  <option>Tanlang</option>
+                  {kateori.map((item) => {
+                    return <option key={item.id}>{item.category}</option>;
+                  })}
+                </select>
               </div>
 
               <div className="flex flex-col gap-2">

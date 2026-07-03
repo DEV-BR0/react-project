@@ -15,7 +15,39 @@
       "id": "0rFXmXoiztg"
     }
   ],
-  "harajat": [],
-  "category": [],
+  "harajat": [
+    {
+      "id": "aVwVYdXDmyY",
+      "title": "12",
+      "category": "Transport",
+      "type": "income",
+      "amount": "12",
+      "date": "2026-07-16"
+    },
+    {
+      "id": "Y9M78SSCbyw",
+      "title": "12122",
+      "category": "",
+      "type": "income",
+      "amount": "22222222",
+      "date": "2026-07-29"
+    },
+    {
+      "id": "d3kOnC6haq0",
+      "title": "12",
+      "category": "",
+      "type": "income",
+      "amount": "23",
+      "date": "2026-07-22"
+    }
+  ],
+  "category": [
+    {
+      "id": "Y2a2Hb0vABw",
+      "category": [],
+      "icon": "Utensils",
+      "color": "bin"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
