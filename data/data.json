@@ -8,16 +8,7 @@
       "id": "0HFGwBim_xA"
     }
   ],
-  "harajat": [
-    {
-      "title": "sa",
-      "category": "ovqat",
-      "type": "income",
-      "amount": "1",
-      "date": "2026-07-17",
-      "id": "6q4bc88XNAo"
-    }
-  ],
+  "harajat": [],
   "category": [],
   "$schema": "./node_modules/json-server/schema.json"
 }
