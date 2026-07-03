@@ -1,16 +1,20 @@
-# React + Vite
+# Xarajatlarni Nazorat Qilish Loyihasi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu loyiha foydalanuvchiga tizimga kirib, o'z xaridlarini kiritish va shu xaridlar asosida xarajatlarini kuzatish imkonini beradi.
 
-Currently, two official plugins are available:
+## Loyiha nima qiladi
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Foydalanuvchi avval tizimga login qiladi. Shundan keyin u har bir xaridini kiritadi - nima sotib olgani va necha pul sarflagani. Loyiha barcha kiritilgan xaridlarni yig'ib, umumiy xarajatni hisoblaydi. Bundan tashqari xarajatlarni haftalik va oylik bo'lib ham hisoblab, foydalanuvchiga ko'rsatadi. Shu orqali foydalanuvchi o'zining pulni qayerga va qancha sarflaganini to'liq nazorat qila oladi.
 
-## React Compiler
+## Texnologiya
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Loyiha React va Vite yordamida yaratilgan.
 
-## Expanding the ESLint configuration
+## Asosiy bo'limlar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Login qilish tizimi
+- Xaridlarni kiritish
+- Barcha xaridlar ro'yxati
+- Umumiy xarajat hisobi
+- Haftalik xarajat hisobi
+- Oylik xarajat hisobi
